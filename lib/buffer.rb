@@ -1,3 +1,5 @@
+# require StringScanner
+
 class Buffer
   attr_accessor :file_path, :content_string, :line_count
 
@@ -7,4 +9,10 @@ class Buffer
     @line_count = content_string.length
   end
 
+  def get_file_content(file_path)
+    content_string = " "
+    File.open(file_path, "r") do |elem|
+      content_string = elem.readlines.map(&:strip)
+    end
+  end
 end
