@@ -10,11 +10,11 @@ class Buffer
   end
 
   def get_file_content(file_path)
-    content_string = " "
-    File.open(file_path, "r") do |elem|
-      content_string = elem.readlines.map(&:strip)      
+    content_string = ' '
+    File.open(file_path, 'r') do |elem|
+      content_string = elem.readlines.map(&:strip)
     end
-    content_scan = content_string.map { |elem| elem = StringScanner.new(elem) }
+    content_scan = content_string.map { |elem| StringScanner.new(elem) }
     content_scan
   end
 end
