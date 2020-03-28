@@ -84,6 +84,7 @@ module Checks
       if found && content_string[elem] == ''
         counter += 1
       elsif found && content_string[elem].string != ''
+        error_message(5, i + 1, char) if count.zero? && !content_string[elem].exist?(/}/)
         found = false
       else
         found = false
