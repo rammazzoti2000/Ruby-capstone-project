@@ -7,7 +7,7 @@ class Buffer
   def initialize(file_path)
     @file_path = file_path
     @content_string = get_file_content(file_path)
-    @line_ct = content_string.length
+    @line_count = content_string.length
   end
 
   private

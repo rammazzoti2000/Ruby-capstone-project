@@ -1,6 +1,6 @@
 div {
- font-size: 18pt;
-     color: #222222;
+  font-size: 18pt;
+  color: #222222;
 }
 
   img {
@@ -18,7 +18,8 @@ a {
 }
 
 div {
-  color: #222222; font-size: 18pt;
+  color: #222222;
+  font-size: 18pt;
 }
 
 p {
@@ -39,5 +40,7 @@ div {
 p {
   font-family: Helvetica, Arial, sans-serif;
 }
-p,h1{color:red; font-family:serif; font-size:16pt;}
-a {text-decoration:none}
+    p,h1{
+  color:red;
+  font-family:serif; font-size:16pt;}
+    a {text-decoration:none}

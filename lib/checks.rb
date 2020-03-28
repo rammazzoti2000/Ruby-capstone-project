@@ -1,4 +1,5 @@
 require 'strscan'
+require 'colorize'
 
 # rubocop: disable Metrics/ModuleLength
 module Checks
@@ -104,19 +105,19 @@ module Checks
   end
 
   def error_message(type, line, char = nil, position = nil, lev = nil)
-    string_error = "Error: line #{line}"
-    string_error += ", col: #{position}" unless position.nil?
+    string_error = "Error: line #{line}".red
+    string_error += "," + " col: #{position}".green unless position.nil?
     case type
     when 1
-      puts "#{string_error}, Wrong Indentation --> expected #{lev} spaces "
+      puts string_error + "," + " Wrong Indentation".green + " --> " + " expected #{lev} spaces "
     when 2
-      puts "#{string_error}, Spacing --> expected single space after #{char}"
+      puts string_error + "," + " Spacing".green + " --> " + " expected single space after ".yellow + char
     when 3
-      puts "#{string_error}, Spacing --> expected single space before #{char}"
+      puts string_error + "," + " Spacing".green + " --> " + "expected single space before ".yellow + char
     when 4
-      puts "#{string_error}, Line Format --> Expected line break after #{char}"
+      puts string_error + "," + " Line Format".green + " --> " + "Expected line break after ".yellow + char
     when 5
-      puts "#{string_error}, Line Format --> Expected one empty line after #{char}"
+      puts string_error + "," + " Line Format".green + " --> " + "Expected one empty line after ".yellow + char
     else
       puts "#{string_error}, Other"
     end
