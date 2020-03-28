@@ -135,7 +135,7 @@ div {
 <!-- ABOUT THE PROJECT -->
 ## Instructions
 
-The **_CSS Linter_** does basic syntax checking as well as applying a set of rules to the code and throws back an error if bad syntax is found.
+The **_CSS Linter_** does basic syntax checking, as well as applying a set of rules to the code and throws back an error if bad syntax is found.
 The throwback error is being printed out indicating the line and column of the specific syntax issue.
 
 **Examples**
@@ -146,16 +146,19 @@ The throwback error is being printed out indicating the line and column of the s
 - Line Format, Expected one empty line after **'}'**
 
 To test out **CSS Linter** you need to:
-
+* have **Ruby** installed on your computer
+* [download](https://github.com/rammazzoti2000/Ruby-capstone-project/archive/feature/readme_instructions.zip) or clone this repo:
+  - Clone with SSH:
+  ```
+  git@github.com:rammazzoti2000/Ruby-capstone-project.git
+  ```
+  - Clone with HTTPS:
+  ```
+  https://github.com/rammazzoti2000/Ruby-capstone-project.git
+  ```
+* Navigate to root directory of the repo and run:
 ```
-bubble = bubble_sort_by(%w[hi hello hey]) do |left, right|
-  left.length - right.length
-end
-
-p bubble_sort([1, 3, 42, 54, 21, 221, 31, 2, 0])
-puts
-p bubble
-
+$ bin/main path_to_file.css (path_to_file being the file you want to check for linters)
 ```
 
 ### Built With
