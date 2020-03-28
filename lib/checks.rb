@@ -11,6 +11,7 @@ module Checks
       else
         0
       end
+      error_message(1, i + 1, nil, nil, lev[i] * 2) unless string_pos == lev[i] * 2
     end
   end
 
@@ -38,16 +39,18 @@ module Checks
       space_after(idx + 1, elem, ":")
       space_after(idx + 1, elem, ",")
     end
+
   end
 
   def space_before(line, str, char)
     str.reset
-    string = str.scan_until(Regexp.new(char))
+    s = str.scan_until(Regexp.new(char))
     while str.matched?
-      string = StringScanner.new(string.reverse)
-      string.skip(Regexp.new(char))
+      s = StringScanner.new(s.reverse)
+      s.skip(Regexp.new(char))
       str.scan(/\s+/)
-      string = str.scan_until(Regexp.new(char))
+      error_(3, line, char, s.string.length - s.position) if s.matched != ' '
+      s = str.scan_until(Regexp.new(char))
     end
   end
 
@@ -56,6 +59,7 @@ module Checks
     str.scan_until(Regexp.new(char))
     while str.matched?
       str.scan(/\s+/)
+      error_message(2, line, char, str.position) if str.matched != ' '
       str.scan_until(Regexp.new(char))
     end
   end
@@ -72,6 +76,7 @@ module Checks
     str.reset
     str.scan_until(Regexp.new(char))
     while str.matched?
+      error_message(4, line, char, str.position) unless str.eos?
       str.scan_until(Regexp.new(char))
     end
   end
@@ -96,7 +101,7 @@ module Checks
     end
   end
 
-  def error_message(type, line, char = nil, position = nil, level = nil)
+  def error_message(type, line, char = nil, position = nil, lev = nil)
     string_error = "Error! at line #{line}"
     if position.nil?
       string_error
@@ -106,7 +111,7 @@ module Checks
 
     case type
     when 1
-      puts "#{string_error}: Wrong Indentation -- expected #{level} spaces"
+      puts "#{string_error}: Wrong Indentation -- expected #{lev} spaces"
     when 2
       puts "#{string_error}: Spacing -- expected single space after #{char}"
     when 3
