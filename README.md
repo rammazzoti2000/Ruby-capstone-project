@@ -58,32 +58,92 @@ Specifically is a CSS Linter with the purpose to check for spacing, indentation 
 
 ## Rules
 
-  ### Indentation
+**Indentation**
+* 2 space indentation rule
 
-  * 2 space indentation rule
+bad code:
+```css
+  img {
+  width: 700px;
+  max-width: 100%;
+}
+```
 
-  bad code:
-
-  ```css
-    img {
+good code:
+```css
+  img {
     width: 700px;
     max-width: 100%;
   }
-  ```
+```
 
-  good code:
+**Line Format** 
+* One line checking
+* Line missing between css blocks
 
-  ```css
-    img {
-      width: 700px;
-      max-width: 100%;
-    }
+bad code:
+```css
+p {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+a {
+  color: #111111;
+  font-size: 16px;
+}
+```
+
+good code:
+```css
+p {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+
+a {
+  color: #111111;
+  font-size: 16px;
+}
+```
+
+**Spacing**
+* Checking for missing spacing after : or ,
+* Checking for missing spacing after { or }
+* Checking for line break after { or } and after each property declaration
+
+bad code:
+
+```css
+a,p{color: #111111; font-size: 16px;}
+div{color: #222222; font-size: 18px;}
+```
+
+good code:
+```css
+a {
+  color: #111111;
+  font-size: 16px;
+}
+
+div {
+  color: #222222;
+  font-size: 18px;
+}
 ```
 
 
-
 <!-- ABOUT THE PROJECT -->
-## Installation
+## Instructions
+
+The **_CSS Linter_** It does basic syntax checking as well as applying a set of rules to the code and throws back an error if bad syntax is found.
+The throwback error is being printed out indicating the line and column of the specific syntax issue.
+
+**Examples**
+- Wrong Indentation, expected **_n_** spaces
+- Spacing, expected single space before **'{'** and **'('**
+- Spacing, expected single space after **')'** and **':'** and **','**
+- Line Format, Expected line break after **'{'** and **'}'** and **';'**
+- Line Format, Expected one empty line after **'}'**
 
 To test the code you need to write this at the end and execute it with [ruby](https://repl.it) : 
 
