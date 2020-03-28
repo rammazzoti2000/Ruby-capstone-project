@@ -53,8 +53,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This is the Ruby Capstone Project required at the end of Ruby module in Microverse Curriculum.
-Specifically is a CSS Linter with the purpose to check for spacing, indentation and format errors.
+This is the **Ruby Capstone Project** required at the end of **Ruby** module in Microverse Curriculum.
+Specifically is a **CSS Linter** with the purpose to check for spacing, indentation and format errors.
 
 ## Rules
 
@@ -107,9 +107,9 @@ a {
 ```
 
 **Spacing**
-* Checking for missing spacing after : or ,
-* Checking for missing spacing after { or }
-* Checking for line break after { or } and after each property declaration
+* Checking for missing spacing after **:** or **,**
+* Checking for missing spacing after **{** or **}**
+* Checking for line break after **{** or **}** and after each property declaration
 
 bad code:
 
@@ -135,7 +135,7 @@ div {
 <!-- ABOUT THE PROJECT -->
 ## Instructions
 
-The **_CSS Linter_** It does basic syntax checking as well as applying a set of rules to the code and throws back an error if bad syntax is found.
+The **_CSS Linter_** does basic syntax checking as well as applying a set of rules to the code and throws back an error if bad syntax is found.
 The throwback error is being printed out indicating the line and column of the specific syntax issue.
 
 **Examples**
@@ -145,7 +145,7 @@ The throwback error is being printed out indicating the line and column of the s
 - Line Format, Expected line break after **'{'** and **'}'** and **';'**
 - Line Format, Expected one empty line after **'}'**
 
-To test the code you need to write this at the end and execute it with [ruby](https://repl.it) : 
+To test out **CSS Linter** you need to:
 
 ```
 bubble = bubble_sort_by(%w[hi hello hey]) do |left, right|
