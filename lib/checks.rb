@@ -1,34 +1,34 @@
 require 'strscan'
-# rubocop: disable Metrics/ModuleLength,Metrics/MethodLength
 
+# rubocop: disable Metrics/ModuleLength
 module Checks
   def check_indent(content_string, case_start, case_end)
     lev = space_indent_check(content_string, case_start, case_end)
     content_string.each_with_index do |elem, idx|
       elem.reset
-      idx.scan(/\s+/)
+      elem.scan(/\s+/)
       string_pos = if elem.matched?
                      elem.matched.length
                    else
                      0
                    end
-      error_message(1, elem + 1, nil, nil, lev[elem] * 2) unless string_pos == lev[elem] * 2
+      error_message(1, idx + 1, nil, nil, lev[idx] * 2) unless string_pos == lev[idx] * 2
     end
   end
 
   def space_indent_check(content_string, case_start, case_end)
-    arr = []
-    line = 0
-    content_string.each_with_index do |elem, idx|
-      elem.reset
-      arr << line
-      line += 1 if elem.exist?(Regexp.new(case_start))
-      next unless elem.exist?(Regexp.new(case_end))
+    levels = []
+    level = 0
+    content_string.each_with_index do |s, i|
+      s.reset
+      levels << level
+      level += 1 if s.exist?(Regexp.new(case_start))
+      next unless s.exist?(Regexp.new(case_end))
 
-      line -= 1
-      arr[idx] = line
+      level -= 1
+      levels[i] = level
     end
-    arr
+    levels
   end
 
   def check_space(content_string)
@@ -36,8 +36,8 @@ module Checks
       space_before(idx + 1, elem, '{')
       space_before(idx + 1, elem, '\(')
       space_after(idx + 1, elem, '\)')
-      space_after(idx + 1, elem, ':')
       space_after(idx + 1, elem, ',')
+      space_after(idx + 1, elem, ':')
     end
   end
 
@@ -47,8 +47,8 @@ module Checks
     while str.matched?
       s = StringScanner.new(s.reverse)
       s.skip(Regexp.new(char))
-      str.scan(/\s+/)
-      error_(3, line, char, s.string.length - s.position) if s.matched != ' '
+      s.scan(/\s+/)
+      error_message(3, line, char, s.string.length - s.pos) if s.matched != ' '
       s = str.scan_until(Regexp.new(char))
     end
   end
@@ -58,13 +58,13 @@ module Checks
     str.scan_until(Regexp.new(char))
     while str.matched?
       str.scan(/\s+/)
-      error_message(2, line, char, str.position) if str.matched != ' '
+      error_message(2, line, char, str.pos) if str.matched != ' '
       str.scan_until(Regexp.new(char))
     end
   end
 
   def check_format(content_string)
-    content_s.each_with_index do |elem, idx|
+    content_string.each_with_index do |elem, idx|
       check_after(idx + 1, elem, '{')
       check_after(idx + 1, elem, '}')
       check_after(idx + 1, elem, ';')
@@ -76,7 +76,7 @@ module Checks
     str.reset
     str.scan_until(Regexp.new(char))
     while str.matched?
-      error_message(4, line, char, str.position) unless str.eos?
+      error_message(4, line, char, str.pos) unless str.eos?
       str.scan_until(Regexp.new(char))
     end
   end
@@ -87,10 +87,11 @@ module Checks
     count = 0
     0.upto(content_string.length - 1) do |elem|
       content_string[elem].reset
-      if found && content_string[elem] == ''
+      if found && content_string[elem].string == ''
         count += 1
+        error_message(5, elem + 1, char) if count > 1
       elsif found && content_string[elem].string != ''
-        error_message(5, i + 1, char) if count.zero? && !content_string[elem].exist?(/}/)
+        error_message(5, elem + 1, char) if count.zero? && !content_string[elem].exist?(/}/)
         found = false
       else
         found = false
@@ -103,28 +104,23 @@ module Checks
   end
 
   def error_message(type, line, char = nil, position = nil, lev = nil)
-    string_error = "Error! at line #{line}"
-    if position.nil?
-      string_error
-    else
-      string_error += ", column #{position}"
-    end
-
+    string_error = "Error: line #{line}"
+    string_error += ", col: #{position}" unless position.nil?
     case type
     when 1
-      puts "#{string_error}: Wrong Indentation -- expected #{lev} spaces"
+      puts "#{string_error}, Wrong Indentation --> expected #{lev} spaces "
     when 2
-      puts "#{string_error}: Spacing -- expected single space after #{char}"
+      puts "#{string_error}, Spacing --> expected single space after #{char}"
     when 3
-      puts "#{string_error}: Spacing -- expected single space before #{char}"
+      puts "#{string_error}, Spacing --> expected single space before #{char}"
     when 4
-      puts "#{string_error}: Line Format -- expected line break after #{char}"
+      puts "#{string_error}, Line Format --> Expected line break after #{char}"
     when 5
-      puts "#{string_error}: Line Format -- Expected one empty line after #{char}"
-    when 6
-      puts "#{string_error}: Other"
+      puts "#{string_error}, Line Format --> Expected one empty line after #{char}"
+    else
+      puts "#{string_error}, Other"
     end
     type
   end
 end
-# rubocop: enable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/ModuleLength
+# rubocop: enable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity, Metrics/ModuleLength

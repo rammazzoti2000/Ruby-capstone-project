@@ -1,1 +1,17 @@
 #!/usr/bin/env ruby
+
+require_relative '../lib/buffer.rb'
+require_relative '../lib/checks.rb'
+
+# rubocop: disable Style/MixinUsage
+include Checks
+
+file_path = ARGV.shift
+k_open = '{'
+k_close = '}'
+buffer = Buffer.new(file_path)
+
+check_format(buffer.content_string)
+check_space(buffer.content_string)
+check_indent(buffer.content_string, k_open, k_close)
+# rubocop: enable Style/MixinUsage
