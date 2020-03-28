@@ -81,7 +81,7 @@ module Checks
     count = 0
     0.upto(content_string.length - 1) do |elem|
       content_string[elem].reset
-      if found
+      if found && content_string[elem] == ''
         counter += 1
       elsif content_string[elem].string != ''
         found = false
