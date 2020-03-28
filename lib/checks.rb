@@ -100,7 +100,7 @@ module Checks
     if position.nil?
       string_error
     else
-      string_error += ", column #{position}"
+      string_error += ", column #{position}
     end
   end
 end
