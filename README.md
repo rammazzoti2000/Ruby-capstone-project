@@ -27,9 +27,8 @@
 
   <h2 align="center">CSS Linter</h2>
 
+  <h3 align="center">Ruby Capstone Project --> Build your own linter<h3>
   <p align="center">
-    <h3 align="center">Ruby Capstone Project --> Build your own linter<h3>
-    <br />
     <a href="https://github.com/rammazzoti2000/Ruby-capstone-project"><strong>Explore the docs »</strong></a>
     <br />
     <br />
