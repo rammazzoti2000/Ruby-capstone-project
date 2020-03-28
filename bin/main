@@ -7,11 +7,11 @@ require_relative '../lib/checks.rb'
 include Checks
 
 file_path = ARGV.shift
-k_open = '{'
-k_close = '}'
+case_start = '{'
+case_end = '}'
 buffer = Buffer.new(file_path)
 
 check_format(buffer.content_string)
 check_space(buffer.content_string)
-check_indent(buffer.content_string, k_open, k_close)
+check_indent(buffer.content_string, case_start, case_end)
 # rubocop: enable Style/MixinUsage
