@@ -56,9 +56,9 @@
 This is the Ruby Capstone Project required at the end of Ruby module in Microverse Curriculum.
 Specifically is a CSS Linter with the purpose to check for spacing, indentation and format errors.
 
-# Rules
+## Rules
 
-  ## Indentation
+  ### Indentation
 
   * 2 space indentation rule
 
