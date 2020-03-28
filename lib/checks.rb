@@ -40,7 +40,7 @@ module Checks
     end
   end
 
-  def check_before(line, str, char)
+  def space_before(line, str, char)
     str.reset
     string = str.scan_until(Regex.new(char))
     while str.matched?
@@ -50,7 +50,5 @@ module Checks
       string = str.scan_until(Regexp.new(char))
     end
   end
-
-  
 
 end
