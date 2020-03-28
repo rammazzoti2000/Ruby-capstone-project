@@ -94,4 +94,13 @@ module Checks
       end
     end
   end
+
+  def error_message(type, line, char = nil, position = nil, level = nil)
+    string_error = "Error at line #{line}"
+    if position.nil?
+      string_error
+    else
+      string_error += ", column #{position}"
+    end
+  end
 end
