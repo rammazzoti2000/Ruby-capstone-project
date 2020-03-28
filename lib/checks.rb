@@ -26,5 +26,18 @@ module Checks
         next
       end
     end
+    arr
   end
+
+  def check_space(content_string)
+    content_string.each_with_index do |elem, idx|
+      space_before(idx + 1, elem, "{")
+      space_before(idx + 1, elem, "(")
+      space_after(idx + 1, elem, "}")
+      space_after(idx + 1, elem, ")")
+      space_after(idx + 1, elem, ":")
+      space_after(idx + 1, elem, ",")
+    end
+  end
+
 end
