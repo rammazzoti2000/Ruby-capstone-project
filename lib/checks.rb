@@ -83,9 +83,12 @@ module Checks
       content_string[elem].reset
       if found && content_string[elem] == ''
         counter += 1
-      elsif content_string[elem].string != ''
+      elsif found && content_string[elem].string != ''
         found = false
       else
+        found = false
+      end
+      if content_string[elem].exist?(/}/)
         found = true
         count = 0
       end
