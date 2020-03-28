@@ -9,7 +9,7 @@ describe Checks do
   let(:k_close) { '}' }
 
   describe '#check_indent_level' do
-    it 'should throw an array with the expected levels of indentation for each line' do
+    it 'should return an array with the expected levels of indentation for each line' do
       file_path = '../spec/test_files/indent_test.css'
       b = Buffer.new(file_path)
       expect(check_indent_level(b.content_s, k_open, k_close)).to eql([0, 1, 0])
@@ -17,7 +17,7 @@ describe Checks do
   end
 
   describe '#log_error' do
-    it 'throws an error message based on the received parameters' do
+    it 'returns an error message based on the received parameters' do
       expect do
         log_error(1, 10, nil, nil, 2)
       end.to output("Error: line 10, Wrong Indentation, expected 2 spaces \n").to_stdout
@@ -25,7 +25,7 @@ describe Checks do
   end
 
   describe '#indent_cop' do
-    it 'should throw an error message for line 1 because of incorrect indentation' do
+    it 'should return an error message for line 1 due to wrong indentation' do
       file_path = '../spec/test_files/indent_test.css'
       b = Buffer.new(file_path)
       expect do
@@ -35,7 +35,7 @@ describe Checks do
   end
 
   describe '#spc_check_before' do
-    it 'should throw an error for line 1 because of incorrect spacing' do
+    it 'should return an error for line 1,due to wrong spacing' do
       file_path = '../spec/test_files/spacing_test.css'
       b = Buffer.new(file_path)
       expect do
@@ -45,7 +45,7 @@ describe Checks do
   end
 
   describe '#spc_check_after' do
-    it 'should throw an error for line 3 because of incorrect spacing' do
+    it 'should return an error for line 3,due to wrong spacing' do
       file_path = '../spec/test_files/spacing_test.css'
       b = Buffer.new(file_path)
       expect do
@@ -55,7 +55,7 @@ describe Checks do
   end
 
   describe '#check_ret_after' do
-    it 'should throw an error on line 2 because of incorrect line format' do
+    it 'should return an error on line 2 due to wrong line format' do
       expect do
         file_path = '../spec/test_files/line_form_test.css'
         b = Buffer.new(file_path)
@@ -65,7 +65,7 @@ describe Checks do
   end
 
   describe '#check_ret_after' do
-    it 'should throw an error on line 5 because of incorrect line format' do
+    it 'should return an error on line 5 due to wrong line format' do
       expect do
         file_path = '../spec/test_files/line_form_test.css'
         b = Buffer.new(file_path)
