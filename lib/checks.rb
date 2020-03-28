@@ -42,11 +42,15 @@ module Checks
 
   def check_before(line, str, char)
     str.reset
-    str.scan_until(Regex.new(char))
+    string = str.scan_until(Regex.new(char))
     while str.matched?
-      str.scan(/\+/)
-      str.scan_until(Regexp.new(char))
+      string = StringScanner.new(string.reverse)
+      string.skip(Regex.new(char))
+      str.scan(/\s+/)
+      string = str.scan_until(Regexp.new(char))
     end
   end
+
+  
 
 end
