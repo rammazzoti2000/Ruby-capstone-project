@@ -40,4 +40,13 @@ module Checks
     end
   end
 
+  def check_before(line, str, char)
+    str.reset
+    str.scan_until(Regex.new(char))
+    while str.matched?
+      str.scan(/\+/)
+      str.scan_until(Regexp.new(char))
+    end
+  end
+
 end
