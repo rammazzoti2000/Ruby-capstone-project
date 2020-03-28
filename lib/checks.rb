@@ -70,6 +70,7 @@ module Checks
       check_after(idx + 1, elem, '}')
       check_after(idx + 1, elem, ';')
     end
+    block_line(content_string, '}')
   end
 
   def check_after(line, str, char)
