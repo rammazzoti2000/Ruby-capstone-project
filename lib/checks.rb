@@ -75,4 +75,20 @@ module Checks
       str.scan_until(Regexp.new(char))
     end
   end
+
+  def block_line(content_string, char)
+    found = false
+    count = 0
+    0.upto(content_string.length - 1) do |elem|
+      content_string[elem].reset
+      if found
+        counter += 1
+      elsif content_string[elem].string != ''
+        found = false
+      else
+        found = true
+        count = 0
+      end
+    end
+  end
 end
