@@ -96,11 +96,27 @@ module Checks
   end
 
   def error_message(type, line, char = nil, position = nil, level = nil)
-    string_error = "Error at line #{line}"
+    string_error = "Error! at line #{line}"
     if position.nil?
       string_error
     else
-      string_error += ", column #{position}
+      string_error += ", column #{position}"
     end
+
+    case type
+    when 1
+      puts "#{string_error}: Wrong Indentation -- expected #{level} spaces"
+    when 2
+      puts "#{string_error}: Spacing -- expected single space after #{char}"
+    when 3
+      puts "#{string_error}: Spacing -- expected single space before #{char}"
+    when 4
+      puts "#{string_error}: Line Format -- expected line break after #{char}"
+    when 5
+      puts "#{err_string}: Line Format -- Expected one empty line after #{char}"
+    when 6
+      puts "#{string_error}: Other"
+    end
+    type
   end
 end
