@@ -25,19 +25,19 @@
     <img src="images/microverse.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">CSS Linter</h3>
+  <h2 align="center">CSS Linter</h2>
 
   <p align="center">
-    _Ruby Capstone Project_ --> Build your own **_linter_**
+    <h3>Ruby Capstone Project --> Build your own linter<h3>
     <br />
     <a href="https://github.com/rammazzoti2000/Ruby-capstone-project"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    .
+    -
     <a href="https://github.com/rammazzoti2000/Ruby-capstone-project/issues">Report Bug</a>
-    .
+    -
     <a href="https://github.com/rammazzoti2000/Ruby-capstone-project/issues">Request Feature</a>
-    .
+    -
   </p>
 </p>
 
@@ -54,7 +54,33 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This is the Ruby Capstone Project
+This is the Ruby Capstone Project required at the end of Ruby module in Microverse Curriculum.
+Specifically is a CSS Linter with the purpose to check for spacing, indentation and format errors.
+
+## Rules
+
+  # Indentation
+
+    * 2 space indentation rule
+
+  bad code:
+
+  ```css
+    img {
+    width: 700px;
+    max-width: 100%;
+  }
+  ```
+
+  good code:
+
+  ```css
+    img {
+      width: 700px;
+      max-width: 100%;
+    }
+```
+
 
 
 <!-- ABOUT THE PROJECT -->
