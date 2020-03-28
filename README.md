@@ -28,7 +28,7 @@
   <h2 align="center">CSS Linter</h2>
 
   <p align="center">
-    <h3>Ruby Capstone Project --> Build your own linter<h3>
+    <h3 align="center">Ruby Capstone Project --> Build your own linter<h3>
     <br />
     <a href="https://github.com/rammazzoti2000/Ruby-capstone-project"><strong>Explore the docs »</strong></a>
     <br />
@@ -57,11 +57,11 @@
 This is the Ruby Capstone Project required at the end of Ruby module in Microverse Curriculum.
 Specifically is a CSS Linter with the purpose to check for spacing, indentation and format errors.
 
-## Rules
+# Rules
 
-  # Indentation
+  ## Indentation
 
-    * 2 space indentation rule
+  * 2 space indentation rule
 
   bad code:
 
