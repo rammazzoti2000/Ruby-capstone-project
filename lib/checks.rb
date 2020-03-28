@@ -1,17 +1,18 @@
 require 'strscan'
+# rubocop: disable Metrics/ModuleLength,Metrics/MethodLength
 
 module Checks
   def check_indent(content_string, case_start, case_end)
-    space_indent = space_indent_check(content_string, case_start, case_end)
+    lev = space_indent_check(content_string, case_start, case_end)
     content_string.each_with_index do |elem, idx|
       elem.reset
       idx.scan(/\s+/)
       string_pos = if elem.matched?
-        elem.matched.length
-      else
-        0
-      end
-      error_message(1, i + 1, nil, nil, lev[i] * 2) unless string_pos == lev[i] * 2
+                     elem.matched.length
+                   else
+                     0
+                   end
+      error_message(1, elem + 1, nil, nil, lev[elem] * 2) unless string_pos == lev[elem] * 2
     end
   end
 
@@ -21,25 +22,23 @@ module Checks
     content_string.each_with_index do |elem, idx|
       elem.reset
       arr << line
-      if elem.exist?(Regexp.new(case_start))
-        line += 1
-      else
-        next
-      end
+      line += 1 if elem.exist?(Regexp.new(case_start))
+      next unless elem.exist?(Regexp.new(case_end))
+
+      line -= 1
+      arr[idx] = line
     end
     arr
   end
 
   def check_space(content_string)
     content_string.each_with_index do |elem, idx|
-      space_before(idx + 1, elem, "{")
-      space_before(idx + 1, elem, "(")
-      space_after(idx + 1, elem, "}")
-      space_after(idx + 1, elem, ")")
-      space_after(idx + 1, elem, ":")
-      space_after(idx + 1, elem, ",")
+      space_before(idx + 1, elem, '{')
+      space_before(idx + 1, elem, '\(')
+      space_after(idx + 1, elem, '\)')
+      space_after(idx + 1, elem, ':')
+      space_after(idx + 1, elem, ',')
     end
-
   end
 
   def space_before(line, str, char)
@@ -82,13 +81,14 @@ module Checks
     end
   end
 
+  # rubocop: disable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity
   def block_line(content_string, char)
     found = false
     count = 0
     0.upto(content_string.length - 1) do |elem|
       content_string[elem].reset
       if found && content_string[elem] == ''
-        counter += 1
+        count += 1
       elsif found && content_string[elem].string != ''
         error_message(5, i + 1, char) if count.zero? && !content_string[elem].exist?(/}/)
         found = false
@@ -120,10 +120,11 @@ module Checks
     when 4
       puts "#{string_error}: Line Format -- expected line break after #{char}"
     when 5
-      puts "#{err_string}: Line Format -- Expected one empty line after #{char}"
+      puts "#{string_error}: Line Format -- Expected one empty line after #{char}"
     when 6
       puts "#{string_error}: Other"
     end
     type
   end
 end
+# rubocop: enable Metrics/PerceivedComplexity, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/ModuleLength
