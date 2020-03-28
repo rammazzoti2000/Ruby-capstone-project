@@ -11,4 +11,9 @@ module Checks
       end
     end
   end
+
+  def space_indent_check(content_string, case_start, case_end)
+    arr = []
+    level = 0
+  end
 end
