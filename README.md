@@ -28,15 +28,16 @@
   <h3 align="center">CSS Linter</h3>
 
   <p align="center">
-    This project is part of the Microverse curriculum in Ruby module
+    Ruby Capstone Project --> Build your own linter
     <br />
     <a href="https://github.com/rammazzoti2000/Ruby-capstone-project"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    ·
+    *
     <a href="https://github.com/rammazzoti2000/Ruby-capstone-project/issues">Report Bug</a>
-    ·
+    *
     <a href="https://github.com/rammazzoti2000/Ruby-capstone-project/issues">Request Feature</a>
+    *
   </p>
 </p>
 
