@@ -2,7 +2,6 @@
 
 require_relative '../lib/buffer.rb'
 require_relative '../lib/checks.rb'
-
 # rubocop: disable Style/MixinUsage
 include Checks
 

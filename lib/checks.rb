@@ -1,4 +1,3 @@
-require 'colorize'
 require 'strscan'
 
 # rubocop: disable Metrics/ModuleLength
@@ -105,19 +104,19 @@ module Checks
   end
 
   def log_error(type, line, char = nil, pos = nil, lev = nil)
-    err_string = "Error: line #{line}".red
-    err_string += ',' + " col: #{pos}".green unless pos.nil?
+    err_string = "Error: line #{line}"
+    err_string += ", col: #{pos}" unless pos.nil?
     case type
     when 1
-      puts err_string + ',' + ' Wrong Indentation'.green + ' --> ' + " expected #{lev} spaces "
+      puts "#{err_string}, Wrong Indentation, expected #{lev} spaces "
     when 2
-      puts err_string + ',' + ' Spacing'.green + ' --> ' + ' expected single space after '.yellow + char
+      puts "#{err_string}, Spacing, expected single space after #{char}"
     when 3
-      puts err_string + ',' + ' Spacing'.green + ' --> ' + 'expected single space before '.yellow + char
+      puts "#{err_string}, Spacing, expected single space before #{char}"
     when 4
-      puts err_string + ',' + ' Line Format'.green + ' --> ' + 'Expected line break after '.yellow + char
+      puts "#{err_string}, Line Format, Expected line break after #{char}"
     when 5
-      puts err_string + ',' + ' Line Format'.green + ' --> ' + 'Expected one empty line after '.yellow + char
+      puts "#{err_string}, Line Format, Expected one empty line after #{char}"
     else
       puts "#{err_string}, Other"
     end

@@ -160,7 +160,17 @@ To test out **CSS Linter** you need to:
 ```
 $ bin/main path_to_file.css (path_to_file being the file you want to check for linters)
 ```
+![Screenshot]()
 
+**Rspec testing**
+* Change to **spec** directory
+```
+$ cd spec
+```
+* Finally run the command to execute rspec
+```
+$ rspec checks_spec.rb
+```
 ### Built With
 This project was built using these technologies.
 * Ruby
