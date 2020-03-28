@@ -60,4 +60,11 @@ module Checks
     end
   end
 
+  def check_format(content_string)
+    content_s.each_with_index do |elem, idx|
+      check_after(idx + 1, elem, '{')
+      check_after(idx + 1, elem, '}')
+      check_after(idx + 1, elem, ';')
+    end
+  end
 end
