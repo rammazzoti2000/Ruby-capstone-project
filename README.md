@@ -45,8 +45,9 @@
 
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
+* [Instructions](#instructions)
 * [Video Presentation](#video-presentation)
-* [Contact](#contact)
+* [Contributors](#contributors)
 * [Acknowledgements](#acknowledgements)
 * [License](#license)
 
@@ -180,9 +181,9 @@ This project was built using these technologies.
 * VsCode
 
 <!-- LIVE VERSION -->
-## Live version
+## Video Presentation
 
-You can see it working [here](https://repl.it/@AlexandruBangau/bubblesort)
+Check out full presentation [here]()
 
 <!-- CONTACT -->
 ## Contributors
@@ -210,7 +211,6 @@ You can see it working [here](https://repl.it/@AlexandruBangau/bubblesort)
 [stars-url]: https://github.com/rammazzoti2000/Ruby-capstone-project/stargazers
 [issues-shield]: https://img.shields.io/github/issues/rammazzoti2000/Ruby-capstone-project.svg?style=flat-square
 [issues-url]: https://github.com/rammazzoti2000/Ruby-capstone-project/issues
-[product-screenshot]: images/bubble_sort.png
 
 ## 📝 License
 
