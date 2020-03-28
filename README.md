@@ -28,7 +28,7 @@
   <h3 align="center">CSS Linter</h3>
 
   <p align="center">
-    **Ruby Capstone Project** --> Build your own **linter_**
+    _Ruby Capstone Project_ --> Build your own **_linter_**
     <br />
     <a href="https://github.com/rammazzoti2000/Ruby-capstone-project"><strong>Explore the docs »</strong></a>
     <br />
@@ -46,7 +46,7 @@
 
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
-* [Live Version](#live-version)
+* [Video Presentation](#video-presentation)
 * [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
 * [License](#license)
@@ -54,8 +54,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://repl.it/@AlexandruBangau/bubblesort)
-
+This is the Ruby Capstone Project
 
 
 <!-- ABOUT THE PROJECT -->
