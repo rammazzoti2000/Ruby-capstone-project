@@ -67,4 +67,12 @@ module Checks
       check_after(idx + 1, elem, ';')
     end
   end
+
+  def check_after(line, str, char)
+    str.reset
+    str.scan_until(Regexp.new(char))
+    while str.matched?
+      str.scan_until(Regexp.new(char))
+    end
+  end
 end
