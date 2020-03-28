@@ -177,13 +177,14 @@ $ rspec checks_spec.rb
 ### Built With
 This project was built using these technologies.
 * Ruby
+* Rspec
 * Rubocop
 * VsCode
 
 <!-- LIVE VERSION -->
 ## Video Presentation
 
-Check out full presentation [here]()
+Check out full presentation [here](https://www.loom.com/share/f17077929b4b484a8531d24ee1092598)
 
 <!-- CONTACT -->
 ## Contributors

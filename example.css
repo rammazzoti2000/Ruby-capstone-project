@@ -4,10 +4,10 @@ div {
 }
 
 img {
-width: 50%;
+  width: 50%;
   }
 
-  p {
+p {
 font-family: Helvetica, Arial, sans-serif;
 font-size: 14pt;
 }
@@ -23,24 +23,24 @@ div {
 }
 
 p {
-  font-family: Helvetica,
-               Arial,
-               sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 }
+
 a {
-  color: #111111; 
-  font-size: 16pt; 
+  color: #111111;
+  font-size: 16pt;
 }
 
 
 div {
-  color: #222222; 
-  font-size: 18pt; 
+  color: #222222;
+  font-size: 18pt;
 }
 p {
   font-family: Helvetica, Arial, sans-serif;
 }
-    p,h1{
+    p,h1 {
   color:red;
-  font-family:serif; font-size:16pt;}
+  font-family:serif;
+  font-size:16pt;}
     a {text-decoration:none}
