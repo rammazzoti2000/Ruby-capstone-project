@@ -1,10 +1,9 @@
-# frozen_string_literal: true
-
 require_relative '../lib/buffer.rb'
 require_relative '../lib/checks.rb'
-include Checks
 
 describe Checks do
+  include Checks
+
   let(:k_open) { '{' }
   let(:k_close) { '}' }
 
