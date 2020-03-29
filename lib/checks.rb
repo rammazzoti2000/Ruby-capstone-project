@@ -2,7 +2,6 @@ require 'strscan'
 
 # rubocop: disable Metrics/ModuleLength
 module Checks
-  protected
   def indent_cop(content_s, k_open, k_close)
     lev = check_indent_level(content_s, k_open, k_close)
     content_s.each_with_index do |s, i|
