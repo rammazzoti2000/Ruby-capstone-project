@@ -1,0 +1,12 @@
+GEM
+  specs:
+    strscan (1.0.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  strscan
+
+BUNDLED WITH
+   2.1.4
