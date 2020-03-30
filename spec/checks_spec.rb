@@ -9,7 +9,7 @@ describe Checks do
 
   describe '#check_indent_level' do
     it 'should return an array with the expected levels of indentation for each line' do
-      file_path = '../spec/test_files/indent_test.css'
+      file_path = 'spec/test_files/indent_test.css'
       b = Buffer.new(file_path)
       expect(check_indent_level(b.content_s, k_open, k_close)).to eql([0, 1, 0])
     end
@@ -25,7 +25,7 @@ describe Checks do
 
   describe '#indent_cop' do
     it 'should return an error message for line 1 due to wrong indentation' do
-      file_path = '../spec/test_files/indent_test.css'
+      file_path = 'spec/test_files/indent_test.css'
       b = Buffer.new(file_path)
       expect do
         indent_cop(b.content_s, k_open, k_close)
@@ -35,7 +35,7 @@ describe Checks do
 
   describe '#spc_check_before' do
     it 'should return an error for line 1,due to wrong spacing' do
-      file_path = '../spec/test_files/spacing_test.css'
+      file_path = 'spec/test_files/spacing_test.css'
       b = Buffer.new(file_path)
       expect do
         spc_check_before(1, b.content_s[0], '{')
@@ -45,7 +45,7 @@ describe Checks do
 
   describe '#spc_check_after' do
     it 'should return an error for line 3,due to wrong spacing' do
-      file_path = '../spec/test_files/spacing_test.css'
+      file_path = 'spec/test_files/spacing_test.css'
       b = Buffer.new(file_path)
       expect do
         spc_check_after(3, b.content_s[2], ':')
@@ -56,7 +56,7 @@ describe Checks do
   describe '#check_ret_after' do
     it 'should return an error on line 2 due to wrong line format' do
       expect do
-        file_path = '../spec/test_files/line_form_test.css'
+        file_path = 'spec/test_files/line_form_test.css'
         b = Buffer.new(file_path)
         check_ret_after(2, b.content_s[1], ';')
       end.to output("Error: line 2, col: 12, Line Format, Expected line break after ;\n").to_stdout
@@ -66,7 +66,7 @@ describe Checks do
   describe '#check_ret_after' do
     it 'should return an error on line 5 due to wrong line format' do
       expect do
-        file_path = '../spec/test_files/line_form_test.css'
+        file_path = 'spec/test_files/line_form_test.css'
         b = Buffer.new(file_path)
         check_lines_bet_blocks(b.content_s, '}')
       end.to output("Error: line 5, Line Format, Expected one empty line after }\n").to_stdout
