@@ -1,4 +1,5 @@
 require 'strscan'
+require 'colorize'
 
 # rubocop: disable Metrics/ModuleLength
 module Checks

@@ -164,13 +164,9 @@ $ bin/main path_to_file.css (path_to_file being the file you want to check for l
 ![Screenshot](images/check.png)
 
 **Rspec testing**
-* Change to **spec** directory
+* Run the command and see the output
 ```
-$ cd spec
-```
-* Finally run the command to execute rspec
-```
-$ rspec checks_spec.rb
+$ bundle exec rspec
 ```
 ![Screenshot](images/rspec_test.png)
 
