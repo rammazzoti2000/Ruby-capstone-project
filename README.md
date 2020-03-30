@@ -168,7 +168,7 @@ $ bin/main path_to_file.css (path_to_file being the file you want to check for l
 ```
 $ bundle exec rspec
 ```
-![Screenshot](images/rspec_test.png)
+![Screenshot](images/rspec.png)
 
 ### Built With
 This project was built using these technologies.
