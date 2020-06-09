@@ -185,6 +185,11 @@ This project was built using these technologies.
 
 Check out full presentation [here](https://www.loom.com/share/f17077929b4b484a8531d24ee1092598)
 
+## Potential future features
+- Extend the linter to more complex syntax
+- Improve the terminal interaction
+- Make it an installable gem
+
 <!-- CONTACT -->
 ## Contributors
 
