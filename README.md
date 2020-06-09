@@ -45,8 +45,11 @@
 
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
-* [Instructions](#instructions)
+  * [Rules](#rules)
+  * [Usage](#usage)
+  * [Automated Test](#autoamted-test)
 * [Video Presentation](#video-presentation)
+* [Contributors](#contributors)
 * [Contributors](#contributors)
 * [Acknowledgements](#acknowledgements)
 * [License](#license)
@@ -134,7 +137,7 @@ div {
 
 
 <!-- ABOUT THE PROJECT -->
-## Instructions
+## Usage
 
 The **_CSS Linter_** does basic syntax checking, as well as applying a set of rules to the code and throws back an error if bad syntax is found.
 The throwback error is being printed out indicating the line and column of the specific syntax issue.
@@ -163,7 +166,7 @@ $ bin/main path_to_file.css (path_to_file being the file you want to check for l
 ```
 ![Screenshot](images/check.png)
 
-**Rspec testing**
+**Automated Test**
 * Run the command and see the output
 ```
 $ bundle exec rspec
@@ -175,7 +178,7 @@ This project was built using these technologies.
 * Ruby
 * Rspec
 * Rubocop
-* VsCode
+* Atom :atom:
 
 <!-- LIVE VERSION -->
 ## Video Presentation
@@ -190,6 +193,13 @@ Check out full presentation [here](https://www.loom.com/share/f17077929b4b484a85
 - LinkedIn: [Alexandru Bangau](https://www.linkedin.com/in/alexandru-bangau/)
 - GitHub: [@rammazzoti2000](https://github.com/rammazzoti2000)
 - E-mail: bangau.alexandru@gmail.com
+
+## :handshake: Contributing
+Contributions, issues and feature requests are welcome!
+Feel free to check the [issues page](https://github.com/rammazzoti2000/Ruby-capstone-project/issues)
+
+## Show your support
+Give a :star: if you like this project!
 
 
 <!-- ACKNOWLEDGEMENTS -->
