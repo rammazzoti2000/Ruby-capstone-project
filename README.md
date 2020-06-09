@@ -50,7 +50,7 @@
   * [Automated Test](#autoamted-test)
 * [Video Presentation](#video-presentation)
 * [Contributors](#contributors)
-* [Contributors](#contributors)
+* [Contributing](#contributing)
 * [Acknowledgements](#acknowledgements)
 * [License](#license)
 
